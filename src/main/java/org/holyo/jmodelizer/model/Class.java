@@ -4,29 +4,28 @@ import org.holyo.jmodelizer.api.Model;
 
 /**
  * The class is the most common type in the (java) programming language.
- * 
- * @author olaf
  *
+ * @author olaf
  */
 public class Class extends Type {
 
-	private Container container;
+  private Container container;
 
-	public Container getContainer() {
-		return this.container;
-	}
+  protected Class() {
+    super(null, null);
+  }
 
-	protected Class() {
-		super(null, null);
-	}
+  public Class(Container container, String name) {
+    super(name);
+    this.container = container;
+    container.types.add(this);
+  }
 
-	public Class(Container container, String name) {
-		super(name);
-		this.container = container;
-		container.types.add(this);
-	}
+  public Container getContainer() {
+    return this.container;
+  }
 
-	public void setModel(Model model) {
-		this.model = model;
-	}
+  public void setModel(Model model) {
+    this.model = model;
+  }
 }

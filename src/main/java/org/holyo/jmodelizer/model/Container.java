@@ -1,46 +1,45 @@
 package org.holyo.jmodelizer.model;
 
-import java.util.Collection;
-import java.util.HashSet;
-
 import org.holyo.jmodelizer.api.Model;
 import org.holyo.jmodelizer.api.ModelAware;
 import org.holyo.jmodelizer.api.NamedElement;
 
+import java.util.Collection;
+import java.util.HashSet;
+
 /**
  * A container holds 0..n {@link Type} Elements
- * 
- * @author olaf
  *
+ * @author olaf
  */
 public class Container implements ModelAware, NamedElement {
-	public final Collection<Type> types = new HashSet<Type>();
-	public String fullQualifiedName;
+  public final Collection<Type> types = new HashSet<Type>();
+  public String fullQualifiedName;
 
-	public Model model;
+  public Model model;
 
-	protected Container() {
-	}
+  protected Container() {
+  }
 
-	public Container(String name) {
-		super();
-		this.fullQualifiedName = name;
-	}
+  public Container(String name) {
+    super();
+    this.fullQualifiedName = name;
+  }
 
-	public Container(Model model) {
-		setModel(model);
-	}
+  public Container(Model model) {
+    setModel(model);
+  }
 
-	public Model getModel() {
-		return this.model;
-	}
+  public Model getModel() {
+    return this.model;
+  }
 
-	public void setModel(Model model) {
-		this.model = model;
-	}
+  public void setModel(Model model) {
+    this.model = model;
+  }
 
-	public String getName() {
-		return fullQualifiedName;
-	}
+  public String getName() {
+    return fullQualifiedName;
+  }
 
 }
